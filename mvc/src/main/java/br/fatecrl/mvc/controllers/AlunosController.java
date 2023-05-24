@@ -5,10 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 import br.fatecrl.mvc.models.Aluno;
+
 
 @Controller
 @RequestMapping("/alunos")
@@ -28,8 +30,17 @@ public class AlunosController {
         model.addAttribute("alunos", _alunos);
 
         return  "alunos";
-
-
     }
+
+    @GetMapping("claudio")
+    public String getData(Model model){
+        Date data = new Date(0);
+
+
+        model.addAttribute("data", data);
+
+        return  "claudio";
+    }
+    
     
 }

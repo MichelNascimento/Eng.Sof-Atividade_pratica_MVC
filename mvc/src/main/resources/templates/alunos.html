@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://ww.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +9,24 @@
 <body>
     <h1>Lista de Alunos</h1>
     <hr>
-    
+    <table>
+        <thead>
+            <th>Matricula</th>
+            <th>Nome</th>
+        </thead>
+        <tbody>
+            <tr th:each="aluno:${alunos}">
+                <td th:text="${aluno.matricula}">
+                    000000
+
+                </td>
+                <td th:text="${aluno.nome}">
+                    Michel 
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>    
 </body>
 </html>
